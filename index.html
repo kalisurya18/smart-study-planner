@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Smart Study Planner</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-overlay"></div>
+
+  <header>
+    <h1>📘 Smart Study Planner</h1>
+  </header>
+
+  <main>
+    <section id="task-input">
+      <h2>Add New Task</h2>
+      <form id="task-form">
+        <input type="text" id="task-title" placeholder="Task title" required />
+        <input type="date" id="task-date" required />
+        <input type="time" id="task-time" required />
+        <select id="task-priority" required>
+          <option value="" disabled selected>Select Priority</option>
+          <option value="low">Low Priority</option>
+          <option value="medium">Medium Priority</option>
+          <option value="high">High Priority</option>
+        </select>
+        <button type="submit">Add</button>
+      </form>
+    </section>
+
+    <section id="task-list-section">
+      <h2>Your Tasks</h2>
+
+      <div id="filter-sort-controls">
+        <select id="filter-status">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="incomplete">Incomplete</option>
+        </select>
+        <select id="sort-by">
+          <option value="date-asc">Date ↑</option>
+          <option value="date-desc">Date ↓</option>
+          <option value="priority-asc">Priority A → Z</option>
+          <option value="priority-desc">Priority Z → A</option>
+        </select>
+      </div>
+
+      <ul id="task-list"></ul>
+
+      <div id="progress-container">
+        <label>Progress:</label>
+        <progress id="progress-bar" value="0" max="100"></progress>
+        <span id="progress-text">0%</span>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
